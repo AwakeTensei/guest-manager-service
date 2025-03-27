@@ -27,18 +27,19 @@
 ## Эндпоинты
 
 GET - /api/guests - Получить список всех гостей
+
 Тело отсутствует
 
 POST - /api/guests - Создать нового гостя
 
 Тело и доступные поля(JSON):
-[
+
 {"first_name": "Van", 
 "last_name": "Ivanov", 
 "phone": "+79624567890", 
 "email": "van.ivanov@example.ru", 
 "country": "Russia"}
-]
+
 
 GET - /api/guests/{id} - Получить гостя по ID
 
@@ -47,6 +48,7 @@ GET - /api/guests/{id} - Получить гостя по ID
 PUT - /api/guests/{id} - Обновить данные гостя
 
 Тело и доступные поля(JSON):
+
 {"first_name": "Van", 
 "last_name": "Ivanov", 
 "phone": "+79624567890", 
@@ -54,6 +56,7 @@ PUT - /api/guests/{id} - Обновить данные гостя
 "country": "Russia"}
 
 DELETE - /api/guests/{id} - Удалить гостя по ID
+
 Тело отсутствует
 
 ### Примечания к эндпоинтам
