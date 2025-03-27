@@ -86,34 +86,42 @@ DELETE - /api/guests/{id} - Удалить гостя по ID
    cd guest-manager-service
 
 2. **Установите зависимости через Composer**:
+   
     composer install
 
-3. **Сгенерируйте ключ приложения**:
+4. **Сгенерируйте ключ приложения**:
+   
     php artisan key:generate
 
-4. **Настройте docker-compose.yml**:
+6. **Настройте docker-compose.yml**:
+   
     environment:
     - APP_ENV=local
     - APP_DEBUG=true
     - APP_KEY=base64:generated-artisan-app=key-here
 
-5. **Запустите контейнеры**:
+8. **Запустите контейнеры**:
+   
     docker-compose up -d --build
 
-6. **Выполните миграции**:
+10. **Выполните миграции**:
+    
     docker-compose exec app php artisan migrate
 
-7. **Можно запустить тесты для проверки функциональности приложения**
+12. **Можно запустить тесты для проверки функциональности приложения**
+    
     docker-compose exec app php artisan test
 
 Приложение будет доступно по адресу http://localhost:8080.
 
 **Проверяем эндпоинты при помощи curl**
+
 - Создаем гостя
 curl -X POST http://localhost:8080/api/guests -H "Content-Type: application/json" -d '{"first_name":"Van","last_name":"Ivanov","phone":"+79624567890","email":"van.ivanov@example.ru"}'
 - Ответ:
     {"message":"Guest created"}
 
+------------------------------
 - Получаем гостя по ID
 curl http://localhost:8080/api/guests/1
 - Пример ответа:
@@ -128,11 +136,13 @@ curl http://localhost:8080/api/guests/1
         "updated_at": "2025-03-26T21:44:45.000000Z"
     }
 
+------------------------------
 - Обновляем данные гостя по ID
 curl -X PUT http://localhost:8080/api/guests/1 -H "Content-Type: application/json" -d '{"first_name":"Ivan","last_name":"Sokolov","phone":"+79624567890","email":"ivan.ivanov@example.ru"}'
 - Ответ:
     {"message":"Guest updated"}
 
+------------------------------
 - Удаляем данные гостя по ID
 curl -X DELETE http://localhost:8080/api/guests/1
 - Ответ:
