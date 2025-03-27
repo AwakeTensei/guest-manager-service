@@ -39,10 +39,12 @@ POST - /api/guests - Создать нового гостя
 "phone": "+79624567890", 
 "email": "van.ivanov@example.ru", 
 "country": "Russia"}
+
 ----------------
 GET - /api/guests/{id} - Получить гостя по ID
 
 Тело отсутствует
+
 ----------------
 PUT - /api/guests/{id} - Обновить данные гостя
 
@@ -53,6 +55,7 @@ PUT - /api/guests/{id} - Обновить данные гостя
 "phone": "+79624567890", 
 "email": "van.ivanov@example.ru", 
 "country": "Russia"}
+
 ----------------
 DELETE - /api/guests/{id} - Удалить гостя по ID
 
