@@ -98,7 +98,7 @@ DELETE - /api/guests/{id} - Удалить гостя по ID
     environment:
     - APP_ENV=local
     - APP_DEBUG=true
-    - APP_KEY=base64:generated-artisan-app=key-here
+    - APP_KEY=base64:generated-artisan-app-key-here
 
 8. **Запустите контейнеры**:
    
