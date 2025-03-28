@@ -90,13 +90,15 @@ DELETE - /api/guests/{id} - Удалить гостя по ID
    
     composer install
 
-4. **Сгенерируйте ключ приложения**:
+3. **Отредактируйте .env.example**:
+    Измените необходимые параметры и
+    переименуйте .env.example в .env
+    APP_KEY изменится после следующего шага автоматически.
    
-    php artisan key:generate
-
-6. **Настройте env.**:
+5. **Сгенерируйте ключ приложения**:
    
-    - APP_KEY=base64:generated-artisan-app-key-here
+    php artisan key:generate   
+    Проверьте APP_KEY в .env
 
 8. **Запустите контейнеры**:
    
