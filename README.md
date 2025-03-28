@@ -87,7 +87,7 @@ DELETE - /api/guests/{id} - Удалить гостя по ID
    cd guest-manager-service
 
 2. **Установите зависимости через Composer**:
-   
+    ```bash
     composer install
 
 3. **Отредактируйте .env.example**:
@@ -96,20 +96,21 @@ DELETE - /api/guests/{id} - Удалить гостя по ID
     APP_KEY изменится после следующего шага автоматически.
    
 5. **Сгенерируйте ключ приложения**:
-   
-    php artisan key:generate   
+    ```bash
+    php artisan key:generate
+       
     Проверьте APP_KEY в .env
 
 8. **Запустите контейнеры**:
-   
+    ```bash
     docker-compose up -d --build
 
 10. **Выполните миграции**:
-    
+    ```bash
     docker-compose exec app php artisan migrate
 
 12. **Можно запустить тесты для проверки функциональности приложения**
-    
+    ```bash
     docker-compose exec app php artisan test
 
 Приложение будет доступно по адресу http://localhost:8080.
