@@ -83,7 +83,7 @@ DELETE - /api/guests/{id} - Удалить гостя по ID
 Следуйте этим шагам, чтобы поднять проект локально:
 1. **Склонируйте репозиторий**:
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/AwakeTensei/guest-manager-service.git
    cd guest-manager-service
 
 2. **Установите зависимости через Composer**:
