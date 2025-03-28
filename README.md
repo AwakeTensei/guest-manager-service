@@ -104,7 +104,7 @@ DELETE - /api/guests/{id} - Удалить гостя по ID
 8. **Запустите контейнеры**:
     ```bash
     docker-compose up -d --build
-    ```bash
+    ```
     Если возникает ошибка "the attribute version is obsolete",
     то просто уберите строку version 3.8 из docker-compose.yml
 10. **Выполните миграции**:
