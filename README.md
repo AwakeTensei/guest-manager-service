@@ -84,12 +84,14 @@ DELETE - /api/guests/{id} - Удалить гостя по ID
 1. **Склонируйте репозиторий**:
    ```bash
    git clone https://github.com/AwakeTensei/guest-manager-service.git
+   ```
+   ```bash
    cd guest-manager-service
-
+   ```
 2. **Установите зависимости через Composer**:
     ```bash
     composer install
-
+    ```
 3. **Отредактируйте .env.example**:
     Измените необходимые параметры и
     переименуйте .env.example в .env
@@ -98,7 +100,7 @@ DELETE - /api/guests/{id} - Удалить гостя по ID
 5. **Сгенерируйте ключ приложения**:
     ```bash
     php artisan key:generate
-       
+    ```
     Проверьте APP_KEY в .env
 
 8. **Запустите контейнеры**:
@@ -110,24 +112,28 @@ DELETE - /api/guests/{id} - Удалить гостя по ID
 10. **Выполните миграции**:
     ```bash
     docker-compose exec app php artisan migrate
-
+    ```
 12. **Можно запустить тесты для проверки функциональности приложения**
     ```bash
     docker-compose exec app php artisan test
-
+    ```
 Приложение будет доступно по адресу http://localhost:8080.
 
 ------------------------------
 **Проверяем эндпоинты при помощи curl**
 
 - Создаем гостя
+```bash
 curl -X POST http://localhost:8080/api/guests -H "Content-Type: application/json" -d '{"first_name":"Van","last_name":"Ivanov","phone":"+79624567890","email":"van.ivanov@example.ru"}'
+```
 - Ответ:
     {"message":"Guest created"}
 
 ------------------------------
 - Получаем гостя по ID
+```bash
 curl http://localhost:8080/api/guests/1
+```
 - Пример ответа:
     {
         "id": 1,
@@ -142,12 +148,16 @@ curl http://localhost:8080/api/guests/1
 
 ------------------------------
 - Обновляем данные гостя по ID
+```bash
 curl -X PUT http://localhost:8080/api/guests/1 -H "Content-Type: application/json" -d '{"first_name":"Ivan","last_name":"Sokolov","phone":"+79624567890","email":"ivan.ivanov@example.ru"}'
+```
 - Ответ:
     {"message":"Guest updated"}
 
 ------------------------------
 - Удаляем данные гостя по ID
+```bash
 curl -X DELETE http://localhost:8080/api/guests/1
+```
 - Ответ:
     {"message":"Guest deleted"}
