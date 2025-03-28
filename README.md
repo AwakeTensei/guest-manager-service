@@ -94,9 +94,8 @@ DELETE - /api/guests/{id} - Удалить гостя по ID
    
     php artisan key:generate
 
-6. **Настройте docker-compose.yml**:
+6. **Настройте env.**:
    
-    environment:
     - APP_ENV=local
     - APP_DEBUG=true
     - APP_KEY=base64:generated-artisan-app-key-here
