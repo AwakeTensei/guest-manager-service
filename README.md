@@ -128,7 +128,7 @@ Linux
 ```bash
 curl -X POST http://localhost:8080/api/guests -H "Content-Type: application/json" -d '{"first_name":"Van","last_name":"Ivanov","phone":"+79624567890","email":"van.ivanov@example.ru"}'
 ```
-Windows
+Windows (powershell)
 ```bash
 Invoke-WebRequest -Uri http://localhost:8080/api/guests -Method Post -Headers @{ "Content-Type" = "application/json" } -Body '{"first_name":"Van","last_name":"Ivanov","phone":"+79624567890","email":"van.ivanov@example.ru"}'
 ```
@@ -137,8 +137,14 @@ Invoke-WebRequest -Uri http://localhost:8080/api/guests -Method Post -Headers @{
 
 ------------------------------
 - Получаем гостя по ID
+
+Linux
 ```bash
 curl http://localhost:8080/api/guests/1
+```
+Windows (powershell)
+```bash
+Invoke-WebRequest -Uri http://localhost:8080/api/guests/1 -Method Get
 ```
 - Пример ответа:
     {
@@ -154,16 +160,28 @@ curl http://localhost:8080/api/guests/1
 
 ------------------------------
 - Обновляем данные гостя по ID
+
+Linux
 ```bash
 curl -X PUT http://localhost:8080/api/guests/1 -H "Content-Type: application/json" -d '{"first_name":"Ivan","last_name":"Sokolov","phone":"+79624567890","email":"ivan.ivanov@example.ru"}'
+```
+Windows (powershell)
+```bash
+Invoke-WebRequest -Uri http://localhost:8080/api/guests/1 -Method Put -Headers @{ "Content-Type" = "application/json" } -Body '{"first_name":"Ivan","last_name":"Sokolov","phone":"+79624567890","email":"ivan.ivanov@example.ru"}'
 ```
 - Ответ:
     {"message":"Guest updated"}
 
 ------------------------------
 - Удаляем данные гостя по ID
+
+Linux
 ```bash
 curl -X DELETE http://localhost:8080/api/guests/1
+```
+Windows (powershell)
+```bash
+Invoke-WebRequest -Uri http://localhost:8080/api/guests/1 -Method Delete
 ```
 - Ответ:
     {"message":"Guest deleted"}
