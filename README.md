@@ -123,6 +123,7 @@ DELETE - /api/guests/{id} - Удалить гостя по ID
 **Проверяем эндпоинты при помощи curl**
 
 - Создаем гостя
+
 Linux
 ```bash
 curl -X POST http://localhost:8080/api/guests -H "Content-Type: application/json" -d '{"first_name":"Van","last_name":"Ivanov","phone":"+79624567890","email":"van.ivanov@example.ru"}'
